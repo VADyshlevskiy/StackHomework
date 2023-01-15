@@ -29,13 +29,13 @@ namespace Stack
             Console.WriteLine("в стеке s теперь элементы - a, b, c, 3, 2, 1 <- верхний");
             s1.Merge(new Stack("1", "2", "3"));
             Console.WriteLine($"size = {s1.Size}, Top = {(s1.Top == null ? "null" : s1.Top)}");
-            Console.WriteLine(s1.printStack());                                                                                     // отладка
+            Console.WriteLine(s1.printStack());                                                                                     // отладка Выводит элементы стека с вверху вниз
 
             // доп. задание 2
             var s2 = Stack.Concat(new Stack("a", "b", "c"), new Stack("1", "2", "3"), new Stack("А", "Б", "В"));
             Console.WriteLine("в стеке s теперь элементы - c, b, a 3, 2, 1, В, Б, А <- верхний");
             Console.WriteLine($"size = {s2.Size}, Top = {(s2.Top == null ? "null" : s2.Top)}");
-            Console.WriteLine(s2.printStack());                                                                                     // отладка
+            Console.WriteLine(s2.printStack());                                                                                     // отладка Выводит элементы стека с вверху вниз
         }
     }
 
@@ -137,17 +137,18 @@ namespace Stack
         }
 
 
-        // --------------- Отладка ---------------
+        // --------------- Отладка --------------  Выводит элементы стека с вверху вниз
         public string printStack()
         {
             string str = "";
             StackItem printStackItem = stackItem;
 
-            while (_size == 0)
+            while (stackItem.PreviousItem != null)
             {
                 str += "\"" + printStackItem.CurrentItem + "\" ";
-                printStackItem.CurrentItem = printStackItem.PreviousItem.CurrentItem;
-                printStackItem.PreviousItem = printStackItem.PreviousItem.PreviousItem;
+
+                stackItem.CurrentItem = stackItem.PreviousItem.CurrentItem;
+                stackItem.PreviousItem = stackItem.PreviousItem.PreviousItem;
             }
 
             return str;
