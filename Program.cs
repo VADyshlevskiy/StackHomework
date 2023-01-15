@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace Stack
 {
@@ -40,35 +41,58 @@ namespace Stack
 
     public class Stack
     {
-        List<string> stackString = new List<string>();
+        //List<string> stackString = new List<string>();
         private int _size;
         private string _top;
+        StackItem stackItem = new StackItem()
+        {
+            CurrentItem = null,
+            PreviousItem = null
+        };
 
         public Stack(params string[] str)
         {
             foreach (var item in str)
             {
-                stackString.Add(item);
+                StackItem newStackItem = new StackItem()
+                {
+                    CurrentItem = item,
+                    PreviousItem = stackItem
+                };
+                stackItem = newStackItem;
             }
-            _size = stackString.Count;
-            _top = stackString.Count != 0 ? stackString[stackString.Count - 1] : "null";
+
+            _size = str.Length;
+            _top = str.Length != 0 ? stackItem.CurrentItem : "null";
         }
 
         public void Add(string newElement)
         {
-            stackString.Add(newElement);
-            _size = stackString.Count;
-            _top = stackString[stackString.Count - 1];
+            //stackString.Add(newElement);
+            StackItem newStackItem = new StackItem()
+            {
+                CurrentItem = newElement,
+                PreviousItem = stackItem
+            };
+            stackItem = newStackItem;
+            _size++;
+            _top = stackItem.CurrentItem;
         }
 
         public string Pop()
         {
             try
             {
-                var result = stackString[stackString.Count - 1];
-                stackString.RemoveAt(stackString.Count - 1);
-                _size = stackString.Count;
-                _top = stackString.Count == 0 ? null : stackString[stackString.Count - 1];
+                var result = stackItem.CurrentItem;
+                //stackString.RemoveAt(stackString.Count - 1);
+                if (stackItem.PreviousItem != null)
+                {
+                    stackItem.CurrentItem = stackItem.PreviousItem.CurrentItem;
+                    stackItem.PreviousItem = stackItem.PreviousItem.PreviousItem;
+                }
+                else throw new Exception();
+                _size--;
+                _top = stackItem.CurrentItem == null ? null : stackItem.CurrentItem;
                 return result;
             }
             catch (Exception)
@@ -95,6 +119,8 @@ namespace Stack
 
         class StackItem
         {
+            public string CurrentItem { get; set; }
+            public StackItem PreviousItem { get; set; }
 
         }
 
@@ -115,10 +141,13 @@ namespace Stack
         public string printStack()
         {
             string str = "";
+            StackItem printStackItem = stackItem;
 
-            for (int i = 0; i < stackString.Count; i++)
+            while (_size == 0)
             {
-                str += "\"" + stackString[i] + "\" ";
+                str += "\"" + printStackItem.CurrentItem + "\" ";
+                printStackItem.CurrentItem = printStackItem.PreviousItem.CurrentItem;
+                printStackItem.PreviousItem = printStackItem.PreviousItem.PreviousItem;
             }
 
             return str;

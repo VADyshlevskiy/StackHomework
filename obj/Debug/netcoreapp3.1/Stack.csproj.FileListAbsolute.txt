@@ -12,3 +12,17 @@ C:\Users\dymlevskiyva\source\repos\Stack\obj\Debug\netcoreapp3.1\Stack.csproj.Co
 C:\Users\dymlevskiyva\source\repos\Stack\obj\Debug\netcoreapp3.1\Stack.dll
 C:\Users\dymlevskiyva\source\repos\Stack\obj\Debug\netcoreapp3.1\Stack.pdb
 C:\Users\dymlevskiyva\source\repos\Stack\obj\Debug\netcoreapp3.1\Stack.genruntimeconfig.cache
+C:\Users\VADys\source\repos\StackHomework\bin\Debug\netcoreapp3.1\Stack.exe
+C:\Users\VADys\source\repos\StackHomework\bin\Debug\netcoreapp3.1\Stack.deps.json
+C:\Users\VADys\source\repos\StackHomework\bin\Debug\netcoreapp3.1\Stack.runtimeconfig.json
+C:\Users\VADys\source\repos\StackHomework\bin\Debug\netcoreapp3.1\Stack.runtimeconfig.dev.json
+C:\Users\VADys\source\repos\StackHomework\bin\Debug\netcoreapp3.1\Stack.dll
+C:\Users\VADys\source\repos\StackHomework\bin\Debug\netcoreapp3.1\Stack.pdb
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.csproj.AssemblyReference.cache
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.AssemblyInfoInputs.cache
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.AssemblyInfo.cs
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.csproj.CoreCompileInputs.cache
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.dll
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.pdb
+C:\Users\VADys\source\repos\StackHomework\obj\Debug\netcoreapp3.1\Stack.genruntimeconfig.cache
