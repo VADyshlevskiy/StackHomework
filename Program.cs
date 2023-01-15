@@ -93,11 +93,6 @@ namespace Stack
             return result;
         }
 
-        class StackItem
-        {
-
-        }
-
         public int Size
         {
             get => _size;
